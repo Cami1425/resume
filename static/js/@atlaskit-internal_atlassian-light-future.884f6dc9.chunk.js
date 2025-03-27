@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcamilalopez=self.webpackChunkcamilalopez||[]).push([[550],{5573:(a,l,e)=>{e.r(l),e.d(l,{default:()=>t});const t='\nhtml[data-color-mode="light"][data-theme~="light:light"],\nhtml[data-color-mode="dark"][data-theme~="dark:light"] {\n  color-scheme: light;\n  --ds-background-disabled: #28311B;\n}\n'}}]);
+//# sourceMappingURL=@atlaskit-internal_atlassian-light-future.884f6dc9.chunk.js.map
