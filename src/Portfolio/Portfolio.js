@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Box, xcss, Inline } from '@atlaskit/primitives';
+import { Box, xcss } from '@atlaskit/primitives';
 import { Section } from '../Section';
 import { ProjectPic } from './ProjectPic';
 import { projectMedia } from './projectMedia';

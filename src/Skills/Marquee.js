@@ -1,6 +1,7 @@
 import React from 'react';
 import { Inline, xcss, Box, Stack } from '@atlaskit/primitives';
 import { motion } from 'motion/react';
+import { token } from '@atlaskit/tokens';
 
 const styles = xcss({
   paddingBlock: 'space.400',
@@ -50,8 +51,7 @@ export function Marquee() {
           bottom: 0,
           zIndex: 100000,
           width: '100%',
-          backgroundImage:
-            'linear-gradient(270deg, hsla(0, 0%, 100%, 0) 70%,rgb(255, 255, 255)), linear-gradient(270deg, rgb(255, 255, 255),hsla(0, 0%, 100%, 0) 30%)',
+          backgroundImage: `linear-gradient(270deg, hsla(0, 0%, 100%, 0) 70%,${token('color.background.input.pressed')}), linear-gradient(270deg, ${token('color.background.input.pressed')},hsla(0, 0%, 100%, 0) 30%)`,
         }}
       ></Box>
       <Stack>
