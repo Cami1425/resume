@@ -32,8 +32,9 @@ const Card = ({ children }) => {
     alignItems: 'center',
     flex: '0 0 auto',
     borderRadius: '8px',
-    backgroundColor: 'color.background.accent.gray.subtle.pressed',
+    backgroundColor: 'color.background.accent.gray.subtler',
     boxShadow: 'elevation.shadow.raised',
+    border: `1px solid ${token('color.border.accent.gray')}`,
   });
 
   return <Box xcss={cardStyles}>{children}</Box>;

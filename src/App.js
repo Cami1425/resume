@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useLayoutEffect, useState } from 'react';
 import '@atlaskit/css-reset';
 import { Header } from './Header/Header';
 import { About } from './About/About';
@@ -9,6 +9,7 @@ import { setGlobalTheme } from '@atlaskit/tokens';
 import { Portfolio } from './Portfolio/Portfolio';
 
 import { Stack, Box, xcss } from '@atlaskit/primitives';
+import { useSpring } from 'motion/react';
 
 setGlobalTheme({
   light: 'light',
@@ -22,11 +23,26 @@ function App() {
   const onChange = (title) => {
     setActiveSection(title);
   };
+  const spring = useSpring(0, { damping: 100, stiffness: 200, duration: 0.1 });
+
+  const moveTo = useCallback((key) => {
+    spring.set(window.pageYOffset, false);
+    setTimeout(() => {
+      spring.set(document.getElementById(key).offsetTop);
+    }, 50);
+  }, [spring]);
+
+  useLayoutEffect(() => {
+    spring.on('change', latest => {
+      console.log('onChange', latest);
+      window.scrollTo(0, latest);
+    });
+  }, [spring]);
 
   return (
-    <Box xcss={xcss({ scrollSnapType: 'y proximity', height: '100vh', overflowY: 'auto', overflowX: 'hidden' })}>
-      <Header activeSection={activeSection} />
-      <Stack space="space.500">
+    <Box>
+      <Header activeSection={activeSection} onNavigation={moveTo} />
+      <Stack space="space.1000">
         <About onEnter={onChange} />
         <Education onEnter={onChange} />
         <Certificates onEnter={onChange} />

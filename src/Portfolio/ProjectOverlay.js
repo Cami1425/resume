@@ -9,6 +9,7 @@ const iframeStyle = xcss({
   height: '100%',
   flexDirection: 'column',
   zIndex: '100000000',
+  position: 'relative',
 });
 
 export function ProjectOverlay({ onClose, url }) {

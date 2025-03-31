@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Inline, xcss, Stack } from '@atlaskit/primitives';
-import { Section } from '../Section';
+import { Section } from '../General/Section';
 
 import { motion } from 'motion/react';
 

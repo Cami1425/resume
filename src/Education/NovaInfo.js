@@ -7,17 +7,14 @@ const diamond = xcss({
   width: '22rem',
   height: '22rem',
   // backgroundColor: 'color.background.input.pressed',
-  backgroundColor: 'color.background.accent.gray.subtle.pressed',
+  backgroundColor: 'color.background.accent.gray.subtler',
   left: '50%',
   position: 'absolute',
   transform: 'rotate(-45deg)',
   transformOrigin: '0 100%',
   zIndex: '-100',
+  top: '12%',
 });
-
-// const textStyles = xcss({
-//   zIndex: '100000',
-// });
 
 export const NovaInfo = () => (
   <Box xcss={xcss({ position: 'relative', width: '100%' })}>
@@ -29,11 +26,11 @@ export const NovaInfo = () => (
       </Flex>
 
       <Stack space="space.100" alignInline="center">
-        <Text size="large">Graduation Honors: Summa Cum Laude (with highest honors)</Text>
+        <Text weight="bold" size="large">Graduation Honors: Summa Cum Laude (with highest honors)</Text>
         <Text size="large">2021 - 2024</Text>
         <Text size="large">AAS-Information Systems Technology Major</Text>
         <Text size="large">CSC-Web Design and Development Certificate</Text>
-        <Text size="large">GPA: 3.9</Text>
+        <Text weight="bold" size="large">GPA: 3.9</Text>
       </Stack>
     </Stack>
   </Box>

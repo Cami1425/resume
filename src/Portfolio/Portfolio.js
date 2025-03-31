@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { Box, xcss } from '@atlaskit/primitives';
-import { Section } from '../Section';
+import { Section } from '../General/Section';
 import { ProjectPic } from './ProjectPic';
 import { projectMedia } from './projectMedia';
 import Carousel from 'react-multi-carousel';
@@ -37,6 +37,10 @@ const carouselStyles = xcss({
   padding: 'space.300',
   width: '800px',
   alignItems: 'center',
+
+  '> div > button': {
+    zIndex: 0,
+  },
 
   '> ul > li': {
     marginTop: '0px',

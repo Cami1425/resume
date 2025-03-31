@@ -1,17 +1,14 @@
 import { Accordion } from './Accordion.js';
 import { Flex, Stack, Inline, xcss, Box } from '@atlaskit/primitives';
 import { novaData } from './data.js';
-import { Section } from '../Section.js';
+import { Section } from '../General/Section.js';
 import { useCallback, useState } from 'react';
 import { NovaInfo } from './NovaInfo.js';
 
 const styles = xcss({
+  padding: 'space.400',
   width: '100%',
 });
-
-// const backgroundStyles = xcss({
-//   backgroundColor: 'color.background.accent.gray.subtler',
-// });
 
 export function Education({ onEnter }) {
   const [currentOpenAccordion, setCurrentOpenAccordion] = useState();
@@ -23,7 +20,7 @@ export function Education({ onEnter }) {
   return (
     // <Box xcss={backgroundStyles}>
       <Section onEnter={onEnter} title="Education">
-        <Flex gap="space.200" justifyContent="center">
+        <Flex gap="space.600" justifyContent="center">
           <Inline xcss={styles}>
             <NovaInfo />
             <Stack grow="fill" space="space.200">

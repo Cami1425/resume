@@ -4,7 +4,7 @@ import { media } from '@atlaskit/primitives/responsive';
 
 import { Certificate } from './Certificate';
 import { courseInfo } from './courseInfo';
-import { Section } from '../Section';
+import { Section } from '../General/Section';
 
 const responsiveStyles = xcss({
   [media.above.xxs]: { gridTemplateColumns: 'repeat(1, 1fr)' },
@@ -26,23 +26,23 @@ const backgroundStyles = xcss({
 
 export function Certificates({ onEnter }) {
   return (
-    // <Box xcss={backgroundStyles}>
-    <Section onEnter={onEnter} title="Certificates">
-      <Stack space="space.400">
-        <Text size="large" >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-        </Text>
-        <Grid xcss={responsiveStyles} gap="space.200" alignItems="center">
-          {courseInfo.map(({ title, certificate }) => (
-            <Certificate title={title} certificate={certificate} />
-          ))}
-        </Grid>
-      </Stack>
-    </Section>
-    // </Box>
+    <Box xcss={backgroundStyles}>
+      <Section onEnter={onEnter} title="Certificates">
+        <Stack space="space.400">
+          <Text size="large" color="color.text.inverse">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+          </Text>
+          <Grid xcss={responsiveStyles} gap="space.200" alignItems="center">
+            {courseInfo.map(({ title, certificate }) => (
+              <Certificate title={title} certificate={certificate} />
+            ))}
+          </Grid>
+        </Stack>
+      </Section>
+    </Box>
   );
 }

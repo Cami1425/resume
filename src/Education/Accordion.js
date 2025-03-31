@@ -9,26 +9,27 @@ const styles = xcss({
   border: '1px solid',
   borderColor: 'color.border',
   display: 'flex',
-  width: '80%',
-  padding: 'space.100',
+  // width: '80%',
+  padding: 'space.200',
   cursor: 'pointer',
   flexDirection: 'column',
-  transition: '1.2s',
+  transition: '1.0s',
   boxShadow: 'elevation.shadow.raised',
   // backgroundColor: 'color.background.neutral.subtle.pressed',
 });
 
 const closedStyles = xcss({
-  maxHeight: '50px',
+  height: '60px',
   ':hover': {
     backgroundColor: 'color.background.neutral.hovered',
   },
 });
 
 const openStyles = xcss({
-  maxHeight: '300px',
-  backgroundColor: 'color.background.accent.gray.bolder',
-  color: 'white',
+  maxHeight: '500px',
+  // backgroundColor: 'color.background.accent.gray.bolder',
+  // color: 'white',
+  backgroundColor: 'elevation.surface.raised'
 });
 
 const titleStyles = xcss({
@@ -53,8 +54,8 @@ export const Accordion = ({ title, content, show, onClick, Icon }) => {
 
   return (
     <Box onClick={handleClick} xcss={[styles, conditionalStyle]}>
-      <Inline spread="space-between">
-        <Inline alignBlock="center" space="space.100">
+      <Inline spread="space-between"  alignBlock="center" alignInline="center">
+        <Inline alignBlock="center" alignInline="center" space="space.100">
           <Icon />
           <Box as="h4" xcss={[open && openStyles, titleStyles]}>
             {title}
@@ -62,7 +63,7 @@ export const Accordion = ({ title, content, show, onClick, Icon }) => {
         </Inline>
         <IconButton appearance="subtle" icon={open ? ChevronUpIcon : ChevronDownIcon} />
       </Inline>
-      {open && <p>{content}</p>}
+      {open && <Box padding="space.100"><p>{content}</p></Box>}
     </Box>
   );
 };
