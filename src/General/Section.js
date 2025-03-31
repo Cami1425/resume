@@ -16,7 +16,8 @@ const wrapperStyles = xcss({
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
-  gap: '130px',
+  gap: '150px',
+  paddingBottom: 'space.500',
 });
 
 const headingStyles = xcss({
@@ -50,18 +51,27 @@ const headingStyles = xcss({
   },
 });
 
-export function Section({ children, title, onEnter }) {
+const darkStyle = xcss({
+  backgroundColor: 'color.background.accent.gray.bolder.pressed',
+  color: 'color.text.inverse',
+});
+
+const grayStyle = () => {};
+
+export function Section({ children, title, onEnter, mode }) {
   const testId = title.replace(' ', '-').toLowerCase();
   return (
-    <AnimatedContent onEnter={onEnter} title={title}>
-      <Stack testId={testId} xcss={wrapperStyles}>
-        <Box id={testId} as="h1" xcss={headingStyles}>
-          {title}
-        </Box>
-        <AnimatedContent delay={0.3}>
-          <Box xcss={styles}>{children}</Box>
-        </AnimatedContent>
-      </Stack>
-    </AnimatedContent>
+    <Box xcss={[mode === 'dark' && darkStyle, mode === 'gray' && grayStyle]}>
+      <AnimatedContent onEnter={onEnter} title={title}>
+        <Stack testId={testId} xcss={wrapperStyles} space="space.500">
+          <Box id={testId} as="h1" xcss={[headingStyles, mode === 'dark' && darkStyle, mode === 'gray' && grayStyle]}>
+            {title}
+          </Box>
+          <AnimatedContent delay={0.3}>
+            <Box xcss={styles}>{children}</Box>
+          </AnimatedContent>
+        </Stack>
+      </AnimatedContent>
+    </Box>
   );
 }

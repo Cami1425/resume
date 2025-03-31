@@ -19,15 +19,10 @@ const responsiveStyles = xcss({
   },
 });
 
-const backgroundStyles = xcss({
-  backgroundColor: 'color.background.accent.gray.bolder.pressed',
-  color: 'color.text.inverse',
-});
-
 export function Certificates({ onEnter }) {
   return (
-    <Box xcss={backgroundStyles}>
-      <Section onEnter={onEnter} title="Certificates">
+    <Box>
+      <Section onEnter={onEnter} title="Certificates" mode='dark'>
         <Stack space="space.400">
           <Text size="large" color="color.text.inverse">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
