@@ -32,8 +32,8 @@ export function Certificates({ onEnter }) {
             anim id est laborum.
           </Text>
           <Grid xcss={responsiveStyles} gap="space.200" alignItems="center">
-            {courseInfo.map(({ title, certificate }) => (
-              <Certificate title={title} certificate={certificate} />
+            {courseInfo.map(({ title, certificate, status }) => (
+              <Certificate title={title} certificate={certificate} status={status} />
             ))}
           </Grid>
         </Stack>

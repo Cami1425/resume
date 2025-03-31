@@ -23,20 +23,21 @@ function App() {
   const onChange = (title) => {
     setActiveSection(title);
   };
-  const spring = useSpring(0, { damping: 100, stiffness: 200, duration: 0.1 });
+  const spring = useSpring(0, { damping: 500, stiffness: 1000 });
 
   const moveTo = useCallback((key) => {
     spring.set(window.pageYOffset, false);
     setTimeout(() => {
-      spring.set(document.getElementById(key).offsetTop);
+      const v = document.getElementById(key).offsetTop;
+      spring.set(v);
     }, 50);
   }, [spring]);
 
   useLayoutEffect(() => {
-    spring.on('change', latest => {
-      console.log('onChange', latest);
+    const unsubscribe = spring.on('change', latest => {
       window.scrollTo(0, latest);
     });
+    return () => {       unsubscribe();      }
   }, [spring]);
 
   return (

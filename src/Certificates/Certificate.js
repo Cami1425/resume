@@ -1,7 +1,8 @@
 import React, { useCallback, useState } from 'react';
-import { Inline, xcss, Box } from '@atlaskit/primitives';
+import { Inline, xcss, Box, Stack } from '@atlaskit/primitives';
 import FileIcon from '@atlaskit/icon/core/file';
 import { CertificateDoc } from './CertificateDoc';
+import Lozenge from '@atlaskit/lozenge'
 
 const boxButtonStyles = xcss({
   color: 'color.text',
@@ -29,7 +30,12 @@ const boxButtonStyles = xcss({
   },
 });
 
-export function Certificate({ title, certificate }) {
+const statusLabels = {
+  inprogress: 'In Progress',
+  success: 'Completed',
+}
+
+export function Certificate({ title, certificate, status }) {
   const [showCertificate, setShowCertificate] = useState(false);
 
   const onButtonClick = useCallback(() => {
@@ -46,11 +52,18 @@ export function Certificate({ title, certificate }) {
 
   return (
     <Box as="button" xcss={boxButtonStyles} onClick={onButtonClick}>
-      <Inline space="space.100" alignInline="center" alignBlock="center">
-        <span>{title}</span>
-        <FileIcon label="File" />
-      </Inline>
+      <Stack space="space.050">
+        <Inline space="space.100" alignInline="center" alignBlock="center">
+          <span>{title}</span>
+          { status === 'success' && <FileIcon label="File" />}
+        </Inline>
 
+        <Box>
+          <Lozenge appearance={status} isBold>
+            {statusLabels[status]}
+          </Lozenge>
+        </Box>
+      </Stack>
       {showCertificate && (
         <CertificateDoc visible={showCertificate} onClick={onBlanketClicked} certificate={certificate} alt={title} />
       )}
