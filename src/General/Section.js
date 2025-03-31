@@ -1,6 +1,5 @@
-import { xcss, Stack, Box } from '@atlaskit/primitives';
-import { motion } from 'motion/react';
-// import { SectionHeading } from './SectionHeading';
+import { xcss, Stack, Box, media } from '@atlaskit/primitives';
+import { AnimatedContent } from './AnimatedContent';
 
 const styles = xcss({
   paddingInline: '5rem',
@@ -8,14 +7,16 @@ const styles = xcss({
   flexDirection: 'column',
   height: '100%',
   justifyContent: 'center',
+  [media.above.xl]: {
+    paddingInline: '15rem',
+  },
 });
 
 const wrapperStyles = xcss({
-  height: 'calc(100vh - 56px)',
-  scrollSnapAlign: 'start',
-  scrollMarginTop: '56px',
+  height: '100%',
   display: 'flex',
   flexDirection: 'column',
+  gap: '130px',
 });
 
 const headingStyles = xcss({
@@ -49,28 +50,18 @@ const headingStyles = xcss({
   },
 });
 
-export function Section({ title, children, onEnter }) {
+export function Section({ children, title, onEnter }) {
+  const testId = title.replace(' ', '-').toLowerCase();
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      viewport={{ once: true }}
-      onViewportEnter={(entry) => onEnter(title)}
-      whileInView={{
-        opacity: 1,
-        x: [-100, 0],
-        transition: {
-          duration: 1,
-          easing: [0.17, 0.55, 0.55, 1],
-        },
-      }}
-    >
-      <Box xcss={wrapperStyles}>
-        {/* <SectionHeading title={title} children={children}></SectionHeading> */}
-        <Box as="h1" xcss={headingStyles}>
+    <AnimatedContent onEnter={onEnter} title={title}>
+      <Stack testId={testId} xcss={wrapperStyles}>
+        <Box id={testId} as="h1" xcss={headingStyles}>
           {title}
         </Box>
-        <Box xcss={styles}>{children}</Box>
-      </Box>
-    </motion.div>
+        <AnimatedContent delay={0.3}>
+          <Box xcss={styles}>{children}</Box>
+        </AnimatedContent>
+      </Stack>
+    </AnimatedContent>
   );
 }
