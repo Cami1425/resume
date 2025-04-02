@@ -56,7 +56,10 @@ const darkStyle = xcss({
   color: 'color.text.inverse',
 });
 
-const grayStyle = () => {};
+const grayStyle = xcss({
+  backgroundColor: 'color.background.accent.gray.bolder.pressed',
+  color: 'color.text.inverse',
+});
 
 export function Section({ children, title, onEnter, mode }) {
   const testId = title.replace(' ', '-').toLowerCase();

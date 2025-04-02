@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { Inline, xcss, Box, Stack } from '@atlaskit/primitives';
 import FileIcon from '@atlaskit/icon/core/file';
 import { CertificateDoc } from './CertificateDoc';
-import Lozenge from '@atlaskit/lozenge'
+import Lozenge from '@atlaskit/lozenge';
 
 const boxButtonStyles = xcss({
   color: 'color.text',
@@ -33,7 +33,7 @@ const boxButtonStyles = xcss({
 const statusLabels = {
   inprogress: 'In Progress',
   success: 'Completed',
-}
+};
 
 export function Certificate({ title, certificate, status }) {
   const [showCertificate, setShowCertificate] = useState(false);
@@ -55,7 +55,7 @@ export function Certificate({ title, certificate, status }) {
       <Stack space="space.050">
         <Inline space="space.100" alignInline="center" alignBlock="center">
           <span>{title}</span>
-          { status === 'success' && <FileIcon label="File" />}
+          {status === 'success' && <FileIcon label="File" />}
         </Inline>
 
         <Box>
