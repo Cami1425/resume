@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.6b94c3ed.css",
-    "main.js": "/static/js/main.35a4022c.js",
+    "main.css": "/static/css/main.4e2eaaa0.css",
+    "main.js": "/static/js/main.a496e55c.js",
     "@atlaskit-internal_atlassian-custom-theme.js": "/static/js/@atlaskit-internal_atlassian-custom-theme.939b4e87.chunk.js",
     "@atlaskit-internal_atlassian-light.js": "/static/js/@atlaskit-internal_atlassian-light.4cffb4cb.chunk.js",
     "@atlaskit-internal_atlassian-light-future.js": "/static/js/@atlaskit-internal_atlassian-light-future.884f6dc9.chunk.js",
@@ -33,8 +33,8 @@
     "static/media/css.svg": "/static/media/css.a6cddf5a0410f499c64bd55d25efd504.svg",
     "index.html": "/index.html",
     "static/media/react.svg": "/static/media/react.928f956d9c8ebcffb98a8e917154a81a.svg",
-    "main.6b94c3ed.css.map": "/static/css/main.6b94c3ed.css.map",
-    "main.35a4022c.js.map": "/static/js/main.35a4022c.js.map",
+    "main.4e2eaaa0.css.map": "/static/css/main.4e2eaaa0.css.map",
+    "main.a496e55c.js.map": "/static/js/main.a496e55c.js.map",
     "@atlaskit-internal_atlassian-custom-theme.939b4e87.chunk.js.map": "/static/js/@atlaskit-internal_atlassian-custom-theme.939b4e87.chunk.js.map",
     "@atlaskit-internal_atlassian-light.4cffb4cb.chunk.js.map": "/static/js/@atlaskit-internal_atlassian-light.4cffb4cb.chunk.js.map",
     "@atlaskit-internal_atlassian-light-future.884f6dc9.chunk.js.map": "/static/js/@atlaskit-internal_atlassian-light-future.884f6dc9.chunk.js.map",
@@ -54,7 +54,7 @@
     "453.0e0112c0.chunk.js.map": "/static/js/453.0e0112c0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b94c3ed.css",
-    "static/js/main.35a4022c.js"
+    "static/css/main.4e2eaaa0.css",
+    "static/js/main.a496e55c.js"
   ]
 }
