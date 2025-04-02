@@ -54,9 +54,9 @@ export const courseInfo = [
     status: 'success',
   },
   {
-    title: 'El siguiente',
+    title: 'Learn React: Lifecycle Methods',
     certificate: '/images/React-Certificate.png',
-    alt: 'Product Manager: Overview Certificate Codecademy',
+    alt: 'Learn React: Lifecycle Methods Certificate Codecademy',
     status: 'inprogress',
   },
 ];
